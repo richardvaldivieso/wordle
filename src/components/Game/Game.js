@@ -57,6 +57,8 @@ function Game() {
             id="guessInput" 
             type="text" 
             maxLength={5}
+            minLength={5}
+            required
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value.toUpperCase())}
             placeholder="Type a word and press Enter"
