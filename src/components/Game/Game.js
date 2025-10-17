@@ -45,19 +45,20 @@ function Game() {
       />
       
       {/* Words display at the top */}
-      <div style={{ flex: 1, padding: '20px' }}>
+      <div style={{ padding: '20px 20px 10px 20px' }}>
         <GameResults words={typedWords} answer={answer} />
       </div>
       
       {/* Input at the bottom */}
-      <div style={{ padding: '20px', borderTop: '1px solid #ccc' }}>
+      <div style={{ padding: '10px 20px 20px 20px', borderTop: '1px solid #ccc' }}>
         <form className="guess-input-wrapper" onSubmit={handleSubmit}>
           <label htmlFor="guess-input">Enter word:</label>
           <input 
             id="guessInput" 
             type="text" 
+            maxLength={5}
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => setInputValue(e.target.value.toUpperCase())}
             placeholder="Type a word and press Enter"
             disabled={gameStatus !== 'playing'}
           />
